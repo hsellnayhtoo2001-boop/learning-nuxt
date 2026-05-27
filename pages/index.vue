@@ -1,26 +1,36 @@
 <template>
   <div class="mainhost">
     <div class="container">
-      <input class="text"
+      <input
+        class="text"
         type="text"
         placeholder="username"
       >
-      <input class="date"
+      <input
+        class="date"
         type="date"
-        placeholder="date of birth">
-      <button class="btn-submit" @click="handleSubmit">Submit</button>
+        placeholder="date of birth"
+      >
+      <button class="btn-submit">
+        Submit
+      </button>
+      <!-- <button
+        class="btn-submit"
+        @click="handleSubmit"
+      >Submit</button> -->
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  methods: {
-    handleSubmit() {
-      alert('Thank you for submitting your information!');
-    }
-  }
-}
+<script setup>
+
+
+
+  // const router = useRouter()
+
+  // const handleSubmit = () => {
+  //   router.push('/counter')
+  // }
 
 </script>
 
@@ -32,22 +42,25 @@ export default {
     height: 100vh;
     background: rgb(90, 20, 20);
   }
+
   .text {
     margin: 15px;
   }
+
   .date {
-    margin:15px;
+    margin: 15px;
   }
+
   .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     background: gray;
     height: 400px;
     width: 500px;
-  
-  }  
+
+  }
 
   .btn-submit {
     background: red;
