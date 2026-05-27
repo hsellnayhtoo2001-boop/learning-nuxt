@@ -17,10 +17,11 @@
 export default {
   methods: {
     handleSubmit() {
-      alert("Thanks for submitting your information!");
+      alert('Thank you for submitting your information!');
     }
   }
 }
+
 </script>
 
 <style>
