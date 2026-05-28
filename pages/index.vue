@@ -11,7 +11,8 @@
         type="date"
         placeholder="date of birth"
       >
-      <button class="btn-submit">
+      <button class="btn-submit"
+       @click="handleSubmit">
         Submit
       </button>
       <!-- <button
@@ -23,9 +24,13 @@
 </template>
 
 <script setup>
-
-
-
+    
+     const router = useRouter()
+     
+     const handleSubmit = () => {
+      router.push('/counter')
+     }
+   
   // const router = useRouter()
 
   // const handleSubmit = () => {
