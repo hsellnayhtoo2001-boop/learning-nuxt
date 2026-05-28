@@ -15,10 +15,6 @@
        @click="handleSubmit">
         Submit
       </button>
-      <!-- <button
-        class="btn-submit"
-        @click="handleSubmit"
-      >Submit</button> -->
     </div>
   </div>
 </template>
@@ -31,12 +27,6 @@
       router.push('/counter')
      }
    
-  // const router = useRouter()
-
-  // const handleSubmit = () => {
-  //   router.push('/counter')
-  // }
-
 </script>
 
 <style>
@@ -73,30 +63,3 @@
     margin: 15px;
   }
 </style>
-
-
-
-<!-- <template>
-  <div class="container">
-    <input
-      type="text"
-      placeholder="username"
-    >
-    <button class="btn-submit">Submit</button>
-  </div>
-</template>
-
-<script>
-</script>
-
-
-<style>
-  .container {
-    /* background: green; */
-  }
-
-  .btn-submit {
-    background: red;
-    padding: 5px;
-  }
-</style> -->
