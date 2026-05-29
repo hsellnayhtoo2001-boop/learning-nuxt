@@ -1,4 +1,10 @@
-### 2025-05-27
+## 2025-05-27
 
-## ref
-## Nuxt Router
+### ref
+### Nuxt Router
+
+## 2026-05-29
+### v-if
+### v-for
+### filter 
+### map
