@@ -7,7 +7,7 @@
     <!-- Looping All User -->
     <div v-for="us in users">
       Name: {{ us.name }},
-      <!-- Age: {{ us.age }} -->
+       Age: {{us.age}}
     </div>
 
 
@@ -16,12 +16,17 @@
     </div>
 
     <!-- Display Male User using filter js -->
-    <!-- <div v-for="m in maleUsers">
+     <div v-for="m in maleUsers">
+      Name:{{ m.name }},
+      Age: {{ m.age }},
+      Gender:{{ m.gender }}
+     </div>
+      <!-- <div v-for="m in maleUsers">
       Name: {{ m.name }}
       Age: {{ m.age }}
       Gender: {{ m.gender }}
     </div> -->
-
+     
     <!-- Display user name only using map js -->
     <!-- <div v-for="name in usersName">
       Name: {{ name }}
