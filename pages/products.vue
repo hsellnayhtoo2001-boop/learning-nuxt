@@ -1,27 +1,31 @@
 <template>
   <div>
+
     <div style="padding-top:40px">
       Products
     </div>
     <!-- Show all products name  -->
+
+
     <div v-for="p in products">
-      Name:{{ p.name }}
-
-
+      <Product :owjfoewjf="p" />
+      Name:{{
+        p.name
+      }}
     </div>
-     
+
   </div>
 
   <div>
     <div style="padding-top:40px">
       Electronics name
-    </div>  
+    </div>
     <div v-for="e in electronicsProducts">
       Name:{{ e.name }}
 
     </div>
     <!-- Show only electronics name -->
-     
+
   </div>
 </template>
 
@@ -35,10 +39,10 @@
     { id: 5, name: 'Monitor', price: 300, category: 'Electronics' },
   ]
 
-const productsName = products.map(p => p.name)
-  console.log("Mapped products:",productsName)
+  const productsName = products.map(p => p.name)
+  console.log("Mapped products:", productsName)
 
-const electronicsProducts = products.filter(p => p.category == 'Electronics')
-console.log("Filtered Electronics products", electronicsProducts)
+  const electronicsProducts = products.filter(p => p.category == 'Electronics')
+  console.log("Filtered Electronics products", electronicsProducts)
 
 </script>
