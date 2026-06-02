@@ -11,23 +11,30 @@
         type="date"
         placeholder="date of birth"
       >
-      <button
-        class="btn-submit"
-        @click="handleSubmit"
-      >
+      <button class="btn-submit"
+       @click="handleSubmit">
         Submit
       </button>
+      
+        
+
     </div>
   </div>
 </template>
 
 <script setup>
+    
+     const router = useRouter()
+     
+     const handleSubmit = () => {
+      router.push('/home')
+     }
+   
+  // const router = useRouter()
 
-  const router = useRouter()
-
-  const handleSubmit = () => {
-    router.push('/home')
-  }
+  // const handleSubmit = () => {
+  //   router.push('/counter')
+  // }
 
 </script>
 
@@ -65,3 +72,30 @@
     margin: 15px;
   }
 </style>
+
+
+
+<!-- <template>
+  <div class="container">
+    <input
+      type="text"
+      placeholder="username"
+    >
+    <button class="btn-submit">Submit</button>
+  </div>
+</template>
+
+<script>
+</script>
+
+
+<style>
+  .container {
+    /* background: green; */
+  }
+
+  .btn-submit {
+    background: red;
+    padding: 5px;
+  }
+</style> -->
