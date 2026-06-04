@@ -1,24 +1,27 @@
 <template>
- <div v-for="p in products">
-   <Product
-    :name="p.name"
-    :price="p.price"
-  />
- </div>
- <br>
- <div v-for="e in electronicsProducts">
-    <Product
-    :name="e.name"
-    :price="e.price"
-    
-    />
+  <div v-for="p in products">
+    <Product :product="p" />
 
-    </div>
+    <!-- <Product
+      :name="p.name"
+      :price="p.price"
+    /> -->
+  </div>
+  <br>
+  <div v-for="e in electronicsProducts">
+    <Product :product="e" />
+
+    <!--
+      <Product
+      :name="e.name"
+      :price="e.price"
+    /> -->
+
+  </div>
 </template>
 
 
 <script setup>
-import Product from '~/components/Product.vue'
 
   const products = [
     { id: 1, name: 'Laptop', price: 1200, category: 'Electronics' },
@@ -46,14 +49,14 @@ import Product from '~/components/Product.vue'
     <!-- Show all products name  -->
 
 
-    <!-- <div v-for="p in products">
+<!-- <div v-for="p in products">
       <Product :name="p" />
       Name:{{
         p.name
       <!-- }}
     </div> -->
 
-  <!-- </div>
+<!-- </div>
 
   <div>
     <div style="padding-top:40px">
@@ -66,4 +69,4 @@ import Product from '~/components/Product.vue'
     <!-- Show only electronics name -->
 <!-- 
   </div> -->
-<!-- </template>--> 
+<!-- </template>-->
