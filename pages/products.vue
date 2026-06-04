@@ -1,42 +1,59 @@
 <template>
-  <div v-for="p in products">
-    <Product :product="p" />
+  <div v-for="p in products"
+  :key="p.id">
 
-    <!-- <Product
-      :name="p.name"
-      :price="p.price"
-    /> -->
+    <Product
+      :product="p"
+      @clicked-product="handleProductClick"
+    />
   </div>
-  <br>
-  <div v-for="e in electronicsProducts">
-    <Product :product="e" />
-
-    <!--
-      <Product
-      :name="e.name"
-      :price="e.price"
-    /> -->
-
-  </div>
+ 
 </template>
 
 
-<script setup>
+<script 
+  setup
+  lang="ts"
+>
+  import type { ProductType } from '~/components/Product.vue'
 
-  const products = [
-    { id: 1, name: 'Laptop', price: 1200, category: 'Electronics' },
-    { id: 2, name: 'Keyboard', price: 50, category: 'Electronics' },
-    { id: 3, name: 'Notebook', price: 5, category: 'Stationery' },
-    { id: 4, name: 'Pen', price: 2, category: 'Stationery' },
-    { id: 5, name: 'Monitor', price: 300, category: 'Electronics' },
-  ]
+  const products = ref( [
+    { 
+      id: 1,
+      name: 'Laptop',
+      price: 1200,
+      category: 'Electronics'
+     },
+    { 
+      id: 2,
+      name: 'Keyboard',
+      price: 50,
+      category: 'Electronics'
+     },
+    { 
+      id: 3,
+      name: 'Notebook',
+      price: 5,
+      category: 'Stationery' 
+     },
+    { 
+      id: 4,
+      name: 'Pen',
+      price: 2,
+      category: 'Stationery'
+      },
+    {
+      id: 5,
+      name: 'Monitor',
+      price: 300,
+      category: 'Electronics'
+       },
+    ])
+  
 
-  const productsName = products.map(p => p.name)
-  console.log("Mapped products:", productsName)
-
-  const electronicsProducts = products.filter(p => p.category == 'Electronics')
-  console.log("Filtered Electronics products", electronicsProducts)
-
+  const handleProductClick =(product: ProductType) =>{
+    products.value = products.value.filter((p) => p.id !=product.id)
+  }  
 </script>
 
 
