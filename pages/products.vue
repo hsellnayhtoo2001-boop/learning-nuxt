@@ -1,4 +1,5 @@
 <template>
+  <div>Product page</div>
   <div v-for="p in products"
   :key="p.id">
 

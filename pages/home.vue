@@ -1,4 +1,8 @@
 <template>
+  <div>
+    Welcome our website, {{ loggedinUsername }}
+
+  </div>
   <div style="display: flex; flex-direction: column; padding: 30px">
     <NuxtLink
       style="padding-bottom:30px"
@@ -32,4 +36,10 @@
 
 </template>
 
-<script></script>
+<script setup>
+
+const route = useRoute();
+
+const loggedinUsername = route.query.username
+
+</script>

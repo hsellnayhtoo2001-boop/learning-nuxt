@@ -49,8 +49,10 @@
     },
   ])
 
+  // when user card is clicked, redirect to the user-detail page with user data
   const handleUserClick = (user: UserType) => {
-    users.value = users.value.filter((u) => u.id != user.id)
+    console.log(user)
+
   }
 
 </script>

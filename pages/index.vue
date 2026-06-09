@@ -1,16 +1,32 @@
 <template>
   <div class="mainhost">
     <div class="container">
+
+      <div> Username is: {{ username }} </div>
+      <div> Date of birth is: {{ dob }}</div>
+      
       <input
+        v-model="username"
         class="text"
         type="text"
-        placeholder="username"
+        placeholder="Enter your username"
       >
+
+      <!-- Create bio input -->
+
+
       <input
+        v-model="password"
         class="date"
-        type="date"
-        placeholder="date of birth"
+        type="password"
+        placeholder="Enter your password"
       >
+
+      <p v-if="errorMessage" style="color: #B71C1C">
+
+        {{ errorMessage }}
+
+      </p>
       <button class="btn-submit"
        @click="handleSubmit">
         Submit
@@ -23,11 +39,34 @@
 </template>
 
 <script setup>
-    
-     const router = useRouter()
+
+    const router = useRouter()
+    const errorMessage = ref('')
+    const username = ref('')
+    const password = ref('')
+     
      
      const handleSubmit = () => {
-      router.push('/home')
+      if(username.value === '') {
+        errorMessage.value = "Please enter your username"
+        return
+      }
+
+      // validate password
+
+      // validate bio
+
+
+      router.push({
+        path: '/home',
+        query: {
+          username: username.value,
+          // remove password and send bio
+          password: password.value
+        }
+      })
+
+      // router.push('/home')
      }
    
   // const router = useRouter()
