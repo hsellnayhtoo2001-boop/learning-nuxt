@@ -1,6 +1,7 @@
 <template>
   <div>
-    Welcome our website, {{ loggedinUsername }}
+    Welcome our website, {{ loggedinUsername }}.
+    Your's BIO, {{ loggedinBio }}
 
   </div>
   <div style="display: flex; flex-direction: column; padding: 30px">
@@ -41,5 +42,7 @@
 const route = useRoute();
 
 const loggedinUsername = route.query.username
+
+const loggedinBio =route.query.Bio
 
 </script>

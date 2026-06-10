@@ -3,7 +3,7 @@
     <div class="container">
 
       <div> Username is: {{ username }} </div>
-      <div> Date of birth is: {{ dob }}</div>
+      <div> BIO  is: {{ Bio }}</div>
       
       <input
         v-model="username"
@@ -13,7 +13,12 @@
       >
 
       <!-- Create bio input -->
-
+      <input 
+        v-model="Bio"
+        class="bio"
+        type="text"
+        placeholder="Enter your Bio"
+      >
 
       <input
         v-model="password"
@@ -39,16 +44,23 @@
 </template>
 
 <script setup>
+import { setBlockTracking } from 'vue'
+
 
     const router = useRouter()
     const errorMessage = ref('')
     const username = ref('')
+    const Bio = ref('')
     const password = ref('')
      
      
      const handleSubmit = () => {
       if(username.value === '') {
         errorMessage.value = "Please enter your username"
+        return
+      }
+      if(password.value === ''){
+        errorMessage.value = "Please enter your password"
         return
       }
 
@@ -62,7 +74,7 @@
         query: {
           username: username.value,
           // remove password and send bio
-          password: password.value
+          Bio: Bio.value
         }
       })
 
@@ -83,7 +95,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: rgb(90, 20, 20);
+    background: rgb(68, 165, 225);
   }
 
   .text {
@@ -99,7 +111,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: gray;
+    background: rgb(128, 128, 128);
     height: 400px;
     width: 500px;
 
