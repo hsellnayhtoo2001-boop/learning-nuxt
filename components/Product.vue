@@ -12,7 +12,7 @@
      <div>
       category: {{ product.category }}
     </div>
-  
+
     </div>
 
 </template>

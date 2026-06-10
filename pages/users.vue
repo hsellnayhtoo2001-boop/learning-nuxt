@@ -1,4 +1,5 @@
 <template>
+
   <div
     v-for="usr in users"
     :key="usr.id"
@@ -6,6 +7,7 @@
     <UserCard
       :user="usr"
       @clicked-user="handleUserClick"
+      @deleted-user="handleDelete"
     />
   </div>
 </template>
@@ -62,6 +64,10 @@
           email: user.email
         }
       })
+  }
+
+  const handleDelete = (user: UserType) => {
+    users.value = users.value.filter((usr) => usr.id != user.id)
   }
 
 </script>

@@ -1,22 +1,29 @@
 <template>
   <div
-    @click="handleClick(user)"
+    
     style="margin-bottom: 10px; width: 300px; background-color: #efefef; padding: 20px;"
   >
-    <div>
-      Name: {{ user.name }}
-    </div>
-    <div>
-      Age: {{ user.age }}
-    </div>
-    <div>
-      Email: {{ user.email }}
-    </div>
-    <div>
-      Gender: {{ user.gender }}
+   <div @click="handleClickDiv(user)">
+      <div>
+        Name: {{ user.name }}
+      </div>
+      <div>
+        Age: {{ user.age }}
+      </div>
+      <div>
+        Email: {{ user.email }}
+      </div>
+      <div>
+        Gender: {{ user.gender }}
+      </div>
     </div>
 
+  <button @click="handleDelete(user)">
+    Delete
+  </button>
   </div>
+
+
 </template>
 
 
@@ -44,11 +51,15 @@
 
 
   // emit 
-  const emit = defineEmits(['clicked-user'])
+  const emit = defineEmits(['clicked-user', 'deleted-user'])
 
-  const handleClick = (user: UserType) => {
+  const handleClickDiv = (user: UserType) => {
     console.log("Clicked user", user)
     emit('clicked-user', user)
+  }
+
+  const handleDelete = (user: UserType) => {
+    emit('deleted-user', user)
   }
 
 
