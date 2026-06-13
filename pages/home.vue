@@ -32,6 +32,12 @@
       User
     </NuxtLink>
 
+    <NuxtLink
+      style="padding-bottom:30px"
+      to="/api-users"
+    >
+      Api User
+    </NuxtLink>
   </div>
 
 
