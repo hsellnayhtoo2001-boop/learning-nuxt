@@ -38,7 +38,7 @@
  
 
   <!-- Computed for filter buttons -->
-  <!-- <div v-for="p in filteredProducts"
+  <div v-for="p in filteredProducts"
 
   :key="p.id">
 
@@ -46,7 +46,17 @@
       :product="p"
       @clicked-product="handleProductClick"
     />
-  </div> -->
+  </div>
+  <div
+  v-for="p in products"
+  :key="p.id"
+  >
+  <Product
+  :product="p"
+  @clicked-product="handleProductClick"
+  @deleted-product="handleDelete"
+  />
+</div>
  
 </template>
 
@@ -55,12 +65,12 @@
   setup
   lang="ts"
 >
+//  import { p, P } from 'vue-router/dist/useApi-D6ckOsFy.js'
   import type { ProductType } from '~/components/Product.vue'
 
 
   const selectedCategory = ref('All')
   const searchText = ref('')
-  
 
   const products = ref( [
     { 
@@ -132,36 +142,7 @@
   // Delete function 
   const handleProductClick =(product: ProductType) =>{
   }  
+  const handleDelete = (product: ProductType) => {
+  products.value = products.value.filter((p) => p.id !== product.id)
+}
 </script>
-
-
-<!-- <template>
-  <div>
-
-    <div style="padding-top:40px">
-      Products
-    </div>
-    <!-- Show all products name  -->
-
-
-<!-- <div v-for="p in products">
-      <Product :name="p" />
-      Name:{{
-        p.name
-      <!-- }}
-    </div> -->
-
-<!-- </div>
-
-  <div>
-    <div style="padding-top:40px">
-      Electronics name
-    </div>
-    <div v-for="e in electronicsProducts">
-      Name:{{ e.name }}
-
-    </div>
-    <!-- Show only electronics name -->
-<!-- 
-  </div> -->
-<!-- </template>-->

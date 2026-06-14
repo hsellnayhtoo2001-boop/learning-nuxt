@@ -12,9 +12,12 @@
      <div>
       category: {{ product.category }}
     </div>
-
-    </div>
-
+    <button @click="handleDelete(product)">
+    Delete</button>
+   </div>
+    
+  
+ 
 </template>
 
 <script
@@ -23,6 +26,7 @@
 >
 
 export type ProductType = {
+    value: any;
     id: Number,
     name: String,
     price: Number,
@@ -35,11 +39,15 @@ export type ProductType = {
   }>()
 
 
-  const emit = defineEmits(['clicked-product'])
+  const emit = defineEmits(['clicked-product','deleted-product'])
 
   const handleClick =(product: ProductType) => {
     console.log("Clicked product", product)
     emit('clicked-product', product)
+  }
+
+  const handleDelete = (product: ProductType) => {
+    emit('deleted-product',product)
   }
   // defineProps({
   // name: String,

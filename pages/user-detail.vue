@@ -16,9 +16,6 @@ const name = route.query.name
 const age = route.query.age
 const email = route.query.email
 const gender = route.query.gender
-
-
-
 const id = route.query.id
 // const selectedUser = users.find(u => u.id == id)
 </script>
