@@ -45,7 +45,15 @@
     >
        Api Posts
     </NuxtLink>
-  
+
+    <NuxtLink
+      style="padding-bottom:30px"
+      to="/naive-ui-demo"
+    >
+       Naive UI demo
+    </NuxtLink>
+
+ 
   </div>
 
 </template>

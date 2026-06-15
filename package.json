@@ -12,6 +12,10 @@
   "dependencies": {
     "nuxt": "^3.21.6",
     "vue": "^3.5.34",
-    "vue-router": "^5.0.7"
+    "vue-router": "^5.0.7",
+    "vueuc": "^0.4.65"
+  },
+  "devDependencies": {
+    "naive-ui": "^2.44.1"
   }
 }
