@@ -38,8 +38,15 @@
     >
       Api User
     </NuxtLink>
+  
+    <NuxtLink
+      style="padding-bottom:30px"
+      to="/api-post"
+    >
+       Api Posts
+    </NuxtLink>
+  
   </div>
-
 
 </template>
 

@@ -63,6 +63,10 @@ import { setBlockTracking } from 'vue'
         errorMessage.value = "Please enter your password"
         return
       }
+      if(Bio.value === ''){
+        errorMessage.value = "Please enter your BIOS"
+        return
+      }
 
       // validate password
 

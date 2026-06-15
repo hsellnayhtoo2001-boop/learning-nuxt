@@ -28,13 +28,13 @@
 
 
   <!-- Computed For search -->
-  <div v-for="p in searchProducts" :key="p.id">
+  <!-- <div v-for="p in searchProducts" :key="p.id">
     <div style="background-color: rgb(28, 147, 134); width: 300px; ">
       <p>Name: {{ p.name }}</p>
       <p>Category: {{ p.category}}</p>
       <p>Price: {{ p.price}}</p>
     </div>
-  </div>
+  </div> -->
  
 
   <!-- Computed for filter buttons -->
@@ -65,7 +65,7 @@
   setup
   lang="ts"
 >
-//  import { p, P } from 'vue-router/dist/useApi-D6ckOsFy.js'
+
   import type { ProductType } from '~/components/Product.vue'
 
 

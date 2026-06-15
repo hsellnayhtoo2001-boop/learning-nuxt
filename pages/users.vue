@@ -1,15 +1,5 @@
 <template>
 <h2>Users Page</h2>
- <div
-    v-for="usr in users"
-    :key="usr.id"
-  >
-    <UserCard
-      :user="usr"
-      @clicked-user="handleUserClick"
-      @deleted-user="handleDelete"
-    />
-  </div>
   <input 
   v-model="searchText"
   type="text"
@@ -25,6 +15,17 @@
   <button 
   style="margin-right: 20px"
   @click="selectedGender = 'female'">Female</button>
+
+ <div
+    v-for="usr in users"
+    :key="usr.id"
+  >
+    <UserCard
+      :user="usr"
+      @clicked-user="handleUserClick"
+      @deleted-user="handleDelete"
+    />
+  </div>
 
   <p v-if="selectedGender" !="All">Current filter is {{ selectedGender }}</p>
 
@@ -51,7 +52,7 @@
   setup
   lang="ts"
 >
-  // import { u, U } from 'vue-router/dist/useApi-D6ckOsFy.js'
+ 
   import type { UserType } from '~/components/UserCard.vue';
 
   

@@ -26,7 +26,6 @@
 >
 
 export type ProductType = {
-    value: any;
     id: Number,
     name: String,
     price: Number,

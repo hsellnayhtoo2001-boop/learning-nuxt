@@ -1,11 +1,17 @@
 <template>
     <div>
         <h1>Api Users</h1>
+        <input
+        v-model="searchText"
+        type="text"
+        placeholder="Search User Name ..."
+        />
+        
         <div v-for="user in users" :key="user.id">
-            ID: {{ user.id }}
-            Name: {{ user.name }}
-            Email: {{ user.email}}
-            Usernaem: {{ user.username}}
+          <div>  ID: {{ user.id }}</div>
+          <div>Name: {{ user.name }}</div>
+         <div>Email: {{ user.email}}</div>
+         <div>Username: {{ user.username}}</div>
 
         </div>
         
